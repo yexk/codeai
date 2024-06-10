@@ -1,0 +1,29 @@
+image: golang:1.18
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - go build -o main
+  artifacts:
+    paths:
+      - main
+  only:
+    - master
+
+test:
+  stage: test
+  script:
+    - go test -v ./...
+  only:
+    - master
+
+deploy:
+  stage: deploy
+  script:
+    - echo 'deploy'
+  only:
+    - master
