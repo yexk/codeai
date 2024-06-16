@@ -1,0 +1,20 @@
+image: golang:1.18
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - go build -o main
+
+test:
+  stage: test
+  script:
+    - go test -v ./...
+
+deploy:
+  stage: deploy
+  script:
+    - echo 'deploy'

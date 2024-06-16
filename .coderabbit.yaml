@@ -1,0 +1,9 @@
+# .coderabbit.yaml
+reviews:
+  auto_review:
+    base_branches:
+      - "main"
+      - "dev"
+      - "feat/.*"
+chat:
+  auto_reply: true
