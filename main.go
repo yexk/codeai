@@ -26,5 +26,14 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"name": user.Name})
 	})
 
+	// 写一个简单的两数相加的接口
+	r.GET("/add", func(c *gin.Context) {
+		a := c.Query("a")
+		b := c.Query("b")
+		c.JSON(http.StatusOK, gin.H{
+			"result": a + b,
+		})
+	})
+
 	r.Run(":8080")
 }
